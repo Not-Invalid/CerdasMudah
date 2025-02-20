@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('frontemplate') }}/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ asset('frontemplate') }}/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('swal/dist/sweetalert2.min.css') }}" rel="stylesheet">
 </head>
 
@@ -43,19 +44,19 @@
                         <div class="collapse navbar-collapse main-menu-item justify-content-end"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item active">
+                                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('welcome') }}">Home</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item {{ request()->is('kelas') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('kelas') }}">Kelas</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item {{ request()->is('podcast') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('podcast') }}">Podcast</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item {{ request()->is('blog') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('about') }}">About</a>
                                 </li>
                                 @guest
@@ -67,7 +68,7 @@
                                 </li>
                                 @else
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Hi {{ Auth::user()->name }}
                                     </a>
@@ -142,14 +143,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <p class="footer-text m-0">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>
-                                        document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="ti-heart"
-                                        aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                        target="_blank">Colorlib</a> & Developed Apps By <a
-                                        href="https:://github/fikrisuheri">Fikri Suheri</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | CerdasMudah
                                 </p>
                             </div>
                         </div>
