@@ -9,8 +9,7 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('admintemplate') }}/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link href="{{ asset('swal/dist/sweetalert2.min.css') }}" rel="stylesheet">
@@ -68,7 +67,7 @@
                         <li class="menu-header">Menu Administrator</li>
                         <li class="{{Request::path() == 'admin' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin') }}">
-                                <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+                                <i class="fas fa-grip"></i><span>Dashboard</span>
                             </a>
                         </li>
                         <li class="{{Request::path() == 'admin/user' ? 'active' : '' }}">
@@ -93,7 +92,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown"><i
-                                    class="fas fa-fire"></i><span>Transaksi</span></a>
+                                    class="fas fa-clipboard-list"></i><span>Transaksi</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="{{ route('admin.transaksi') }}">Semua Transaksi</a></li>
                                 <li><a class="nav-link" href="{{ route('admin.transaksi.belumdicek') }}">Belum Dicek</a>
@@ -105,7 +104,7 @@
                         </li>
                         <li class="{{Request::path() == 'admin/setting' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin.setting') }}">
-                                <i class="fas fa-newspaper"></i><span>Pengaturan</span>
+                                <i class="fa-solid fa-gears"></i><span>Pengaturan</span>
                             </a>
                         </li>
                     </ul>
@@ -126,14 +125,10 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2020 <div class="bullet"></div> Design Template By <a
-                        href="https://nauval.in/">Muhamad Nauval Azhar</a> And Developed App By <a
-                        href="https://github.com/fikrisuheri">Fikri Suheri</a>
-                </div>
-                <div class="footer-right">
-                    2.3.0
+                    Copyright &copy; {{ date('Y') }} <div class="bullet"></div>CerdasMudah</a>
                 </div>
             </footer>
+
         </div>
     </div>
 
