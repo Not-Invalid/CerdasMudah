@@ -24,7 +24,7 @@
                         @enderror
                     </div>
                     <div class="text-right">
-                        <a href="javascript:void(0)" onclick="window.history.back()" class="btn btn-secondary">Batal</a>
+                        <a href="javascript:void(0)" onclick="window.history.back()" class="btn btn-danger">Batal</a>
                         <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                     </div>
                 </form>
