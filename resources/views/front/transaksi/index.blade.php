@@ -29,7 +29,7 @@
         <div class="row">
             @php
             $id = Auth::user()->id;
-            $cek = \App\Transaksi::where(['users_id' => $id]);
+            $cek = \App\Models\Transaksi::where(['users_id' => $id]);
             @endphp
 
             @if ($cek->count() > 0 && $cek->first()->status == 1 && Auth::user()->role == 'premium')
