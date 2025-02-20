@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Models\Rekening;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,27 +14,36 @@ class SettingController extends Controller
     {
         $data = [
             'title' => 'Pengaturan',
-            'setting' => Setting::first()
+            'setting' => Setting::first(),
+            'rekening' => Rekening::first()
         ];
 
-        return view('admin.pengaturan.index',$data);
+        return view('admin.pengaturan.index', $data);
     }
 
     public function simpan(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'about' => 'required',
-            'harga' => 'required|numeric'
+            'harga' => 'required|numeric',
+            'no_rekening' => 'required|string',
+            'atas_nama' => 'required|string'
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return redirect()->route('admin.setting')->withErrors($validator)->withInput();
-        }else{
+        } else {
             Setting::first()->update([
                 'about' => $request->about,
                 'harga' => $request->harga
             ]);
-            return redirect()->route('admin.setting')->with('status','Berhasil Memperbarui Pengaturan');
+
+            Rekening::first()->update([
+                'no_rekening' => $request->no_rekening,
+                'atas_nama' => $request->atas_nama
+            ]);
+
+            return redirect()->route('admin.setting')->with('status', 'Berhasil Memperbarui Pengaturan');
         }
     }
 }
