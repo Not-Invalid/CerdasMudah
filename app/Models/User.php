@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function transaksi()
     {
-        return $this->hasOne('App\Transaksi');
+        return $this->hasOne('App\Models\Transaksi');
     }
 }
