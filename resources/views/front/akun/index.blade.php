@@ -1,21 +1,5 @@
 @extends('layouts.front')
 @section('content')
-{{-- <section class="breadcrumb breadcrumb_bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb_iner text-center">
-                    <div class="breadcrumb_iner_item">
-                        <h2>Course Details</h2>
-                        <p>Home<span>/</span>Course Details</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!-- breadcrumb start-->
-
 <!--================ Start Course Details Area =================-->
 <section class="course_details_area section_padding">
     <div class="container">
@@ -26,46 +10,29 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 mx-auto ">
-                <table>
-                    <tr>
-                        <td>
-                            <h4>Nama</h4>
-                        </td>
-                        <td class="py-1 px-3">
-                            <h4>:</h4>
-                        </td>
-                        <td>
-                            <h4>{{ Auth::user()->name }}</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4>Email</h4>
-                        </td>
-                        <td class="py-1 px-3">
-                            <h4>:</h4>
-                        </td>
-                        <td>
-                            <h4>{{ Auth::user()->email }}</h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4>Tipe Akun</h4>
-                        </td>
-                        <td class="py-1 px-3">
-                            <h4>:</h4>
-                        </td>
-                        <td>
-                            <h4>{{ Auth::user()->role }}</h4>
-                        </td>
-                    </tr>
-                </table>
-                <div class="mt-2">
-                    <a href="{{ route('akun.editprofil') }}" class="btn btn-warning text-white">Edit Profil</a>
-                    <a href="{{ route('akun.editkatasandi') }}" class="btn btn-secondary">Edit Kata Sandi</a>
+        <div class="row justify-content-center"> <!-- Centering the card -->
+            <div class="col-12 col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="#" method="get">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name="name" id="name" class="form-control" value="{{ Auth::user()->name }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ Auth::user()->email }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="role" class="form-label">Status Akun</label>
+                                <input type="text" name="role" id="role" class="form-control" value="{{ Auth::user()->role }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <a href="{{ route('akun.editprofil') }}" class="btn btn-warning text-white">Edit Profil</a>
+                                <a href="{{ route('akun.editkatasandi') }}" class="btn btn-secondary">Edit Kata Sandi</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
