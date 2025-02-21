@@ -80,26 +80,26 @@
                     <a href="{{ route('kelas.belajar',[
                         'id' => Crypt::encrypt($kelas->id),
                         'idvideo' => Crypt::encrypt($kelas->video[0]->id)
-                    ]) }}" class="btn_1 d-block">Belajar</a>
+                    ]) }}" class="#250fee d-block">Belajar</a>
                     @else
                     @guest
                     Anda harus membuat akun untuk mengakses kelas ini
-                    <a href="{{ route('register') }}" class="btn_1 d-block">Buat Akun</a>
+                    <a href="{{ route('register') }}" class="#250fee d-block">Buat Akun</a>
                     @else
                     @if($kelas->type_kelas == 1)
                     <a href="{{ route('kelas.belajar',[
                         'id' => Crypt::encrypt($kelas->id),
                         'idvideo' => Crypt::encrypt($kelas->video[0]->id)
-                    ]) }}" class="btn_1 d-block">Belajar</a>
+                    ]) }}" class="#250fee d-block">Belajar</a>
                     @else
                     @if (Auth::user()->role == 'premium')
                     <a href="{{ route('kelas.belajar',[
                         'id' => Crypt::encrypt($kelas->id),
                         'idvideo' => Crypt::encrypt($kelas->video[0]->id)
-                    ]) }}" class="btn_1 d-block">Belajar</a>
+                    ]) }}" class="#250fee d-block">Belajar</a>
                     @else
                     Upgrade akun Anda ke premium untuk mengakses kelas ini
-                    <a href="{{ route('upgradepremium') }}" class="btn_1 d-block">Upgrade Premium</a>
+                    <a href="{{ route('upgradepremium') }}" class="#250fee d-block">Upgrade Premium</a>
                     @endif
                     @endif
                     @endguest
