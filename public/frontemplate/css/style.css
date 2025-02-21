@@ -7,12 +7,26 @@
 .main_menu .navbar-toggler:after,
 .banner_part .banner_text .btn_1,
 .feature_part .single_feature:hover span {
+    transition: 0.3s ease-in-out;
     background-image: linear-gradient(
         to left,
         #160fee 0%,
         #00aeff 51%,
         #160fee 100%
     );
+}
+
+.special_cource .single_special_cource:hover {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-5px);       
+    }
+.feature_part .single_feature:hover  {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-5px);
+}
+.feature_part .single_feature {
+    border-radius: 12px;
+    height: 330px;
 }
 
 /* line 6, E:/172 Etrain Education/172_Etrain_Education_html/sass/_extends.scss */
@@ -645,7 +659,7 @@ ul {
 
 /* line 106, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
 .btn_4:hover {
-    background: #00aeff;
+    background: #0c2e60;
     color: #fff;
 }
 
@@ -3098,7 +3112,6 @@ ul {
 /* line 57, E:/172 Etrain Education/172_Etrain_Education_html/sass/_feature_part.scss */
 .feature_part .single_feature_part {
     padding: 50px 20px 35px;
-    border: 1px solid #f0f4f6;
     text-align: center;
     -webkit-transition: 0.6s;
     transition: 0.6s;
@@ -3217,9 +3230,7 @@ ul {
 }
 
 /* line 145, E:/172 Etrain Education/172_Etrain_Education_html/sass/_feature_part.scss */
-.feature_part .single_feature:hover .single_feature_part {
-    border: 1px solid #160fee;
-}
+
 
 /* line 148, E:/172 Etrain Education/172_Etrain_Education_html/sass/_feature_part.scss */
 .feature_part .single_feature:hover span {
@@ -4033,7 +4044,11 @@ ul {
 .special_img {
     height: 350px;
     width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    object-fit: cover;
 }
+
 
 @media (max-width: 576px) {
     /* line 17, E:/172 Etrain Education/172_Etrain_Education_html/sass/_special_cource.scss */
@@ -4115,7 +4130,7 @@ ul {
 
 /* line 73, E:/172 Etrain Education/172_Etrain_Education_html/sass/_special_cource.scss */
 .special_cource .single_special_cource .special_cource_text h3:hover {
-    color: #ff663b;
+    color: #160fee;
 }
 
 @media (max-width: 576px) {
