@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ruang Kelas</title>
+  <title>CerdasMudah</title>
   <link rel="icon" href="{{ asset('frontemplate') }}/img/favicon.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ asset('frontemplate') }}/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
       <div class="row align-items-center">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/"> Ruang Kelas </a>
+            <a class="navbar-brand" href="/"> CerdasMudah </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -104,7 +104,7 @@
         <div class="col-sm-6 col-md-4 col-xl-3">
           <div class="single-footer-widget footer_1">
             <a href="index.html"> <b>
-                <h2>Ruang Kelas</h2>
+                <h2>CerdasMudah</h2>
               </b></a>
             <p>Platform belajar online nomor 1 di Indonesia</p>
           </div>
@@ -141,12 +141,7 @@
               <div class="col-lg-12">
                 <p class="footer-text m-0">
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script> All rights reserved | This template is made with <i class="ti-heart"
-                    aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &
-                  Developed Apps By <a href="https:://github/fikrisuheri">Fikri Suheri</a>
+                  Copyright &copy; {{ now()->year }} All rights reserved
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
               </div>
