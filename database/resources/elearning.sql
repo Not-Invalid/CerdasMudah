@@ -169,7 +169,7 @@ CREATE TABLE `rekening` (
 --
 
 INSERT INTO `rekening` (`id`, `no_rekening`, `atas_nama`, `created_at`, `updated_at`) VALUES
-(1, '123456789', 'Fikri Suheri', NULL, NULL);
+(1, '123456789', 'Chivo', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -237,11 +237,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Elearning', 'admin@gmail.com', NULL, '$2y$12$T6umw33sHJRuVAlVfDLlUeuhN/2/pqy91fBaaEl7d0WHqJWjD.UhG', 'admin', NULL, '2020-07-18 19:00:54', '2020-07-20 05:06:08'),
-(2, 'Suheri', 'suheri@gmail.com', NULL, '$2y$12$YDUtQx3MVvYPfoV4TOdXBetaFu/q.F3QWXhLXPklKdANJMAn2xIDy', 'premium', 'YLG9Jwb1lkncROpKMz3esdjH2ZUII1lZtA9IpkzaxZWmKsDU7PZAOEKw3aNc', '2020-07-19 01:50:48', '2020-07-19 01:50:48'),
-(3, 'Tes', 'tes@gmaill.com', NULL, '$2y$12$SX2ceXg0bymbF9Wg7PyDLuxPEESejJjTEgAMuOdTZ9dkIzLM/aqs2', 'regular', NULL, '2020-07-19 07:02:19', '2020-07-19 07:02:19'),
-(4, 'Testing', 'testingedit@gmail.com', NULL, '$2y$10$Es9GI2/z05SZwh8JGEIDselUqPt8qy38QVLzcQR.Zqua7zLexzQo6', 'premium', NULL, '2020-07-19 22:02:50', '2020-07-20 03:02:28'),
-(5, 'fasf', 'tedasds@gmail.com', NULL, '$2y$10$BnPkLFbsE42WIm2.vM5vaODYa3HzTGKVYYoXITFg/EinyEoMcUf/m', 'regular', NULL, '2020-07-20 04:09:52', '2020-07-20 04:09:52');
+(1, 'Admin Elearning', 'admin@gmail.com', NULL, '$2y$10$DFe4lWR0/Z4W9rrGx5xh.eqB.GARGWUR5TGQ39oig3QzBMJHzJyDW', 'admin', '7LyAlA5qa4eMidqmD2dMcRWmpTVtfbAG3437MRjTXOwkWXsCtGFNczvQCDkF', '2020-07-18 19:00:54', '2025-02-17 23:44:11'),
+(6, 'musiala', 'musiala@gmail.com', NULL, '$2y$10$nRwe1aTCpPsPOmx/lqPx2OKs9Lb4g8h9A9HaxP2Sa8SP0l1hjUBL6', 'regular', NULL, '2025-02-20 08:46:25', '2025-02-20 08:46:25'),
+(7, 'Tohar', 'tohar@gmail.com', NULL, '$2y$10$nRwe1aTCpPsPOmx/lqPx2OKs9Lb4g8h9A9HaxP2Sa8SP0l1hjUBL6', 'premium', NULL, '2025-02-20 08:46:25', '2025-02-20 08:46:25');
 
 -- --------------------------------------------------------
 
