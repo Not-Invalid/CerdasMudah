@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
 {
+    // Tujuan: Menampilkan halaman pengaturan dengan data setting dan rekening.
+    // Fungsi: Mengambil data pertama dari tabel Setting dan Rekening, lalu menampilkannya di halaman pengaturan.
     public function index()
     {
         $data = [
@@ -21,6 +23,8 @@ class SettingController extends Controller
         return view('admin.pengaturan.index', $data);
     }
 
+    // Tujuan: Menyimpan atau memperbarui pengaturan dan rekening.
+    // Fungsi: Memvalidasi input dari user, kemudian memperbarui data Setting dan Rekening di database.
     public function simpan(Request $request)
     {
         $validator = Validator::make($request->all(), [
