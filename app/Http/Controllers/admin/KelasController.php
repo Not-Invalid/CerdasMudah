@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 
 class KelasController extends Controller
 {
+    // Tujuan: Menampilkan daftar semua kelas.
+    // Fungsi: Mengambil semua data kelas dan menampilkannya di halaman admin.
     public function index()
     {
         $data = [
@@ -22,6 +24,8 @@ class KelasController extends Controller
         return view('admin.kelas.index', $data);
     }
 
+    // Tujuan: Menampilkan halaman untuk menambahkan kelas baru.
+    // Fungsi: Menampilkan form untuk menambahkan kelas baru di halaman admin.
     public function tambah()
     {
         $data = [
@@ -30,9 +34,10 @@ class KelasController extends Controller
         return view('admin.kelas.tambah', $data);
     }
 
+    // Tujuan: Menyimpan kelas baru ke dalam database.
+    // Fungsi: Memvalidasi data kelas yang dimasukkan, menyimpan thumbnail kelas, dan memasukkan data kelas ke dalam database.
     public function simpan(Request $request)
     {
-
         $validator = Validator($request->all(), [
             'name_kelas' => 'required',
             'type_kelas' => 'required',
@@ -55,6 +60,8 @@ class KelasController extends Controller
         }
     }
 
+    // Tujuan: Menampilkan detail dari kelas tertentu.
+    // Fungsi: Mengambil data kelas berdasarkan ID yang didekripsi dan menampilkannya di halaman detail.
     public function detail($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -65,6 +72,8 @@ class KelasController extends Controller
         return view('admin.kelas.detail', $data);
     }
 
+    // Tujuan: Menghapus kelas tertentu dan video terkait.
+    // Fungsi: Menghapus kelas dari database, menghapus thumbnail kelas, serta menghapus video yang terkait dengan kelas tersebut.
     public function hapus($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -75,6 +84,8 @@ class KelasController extends Controller
         return redirect()->route('admin.kelas')->with('status', 'Berhasil Menghapus Kelas');
     }
 
+    // Tujuan: Menampilkan halaman untuk mengedit kelas.
+    // Fungsi: Menampilkan halaman edit kelas berdasarkan ID kelas yang didekripsi.
     public function edit($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -85,6 +96,8 @@ class KelasController extends Controller
         return view('admin.kelas.edit', $data);
     }
 
+    // Tujuan: Memperbarui data kelas yang sudah ada.
+    // Fungsi: Memvalidasi dan memperbarui data kelas di database, termasuk thumbnail jika ada perubahan.
     public function update(Request $request, $id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -98,7 +111,6 @@ class KelasController extends Controller
         if ($validator->fails()) {
             return redirect()->route('admin.kelas.edit', $id)->withErrors($validator)->withInput();
         } else {
-
             $kelas = Kelas::find($dec_id);
             if ($request->file('thumbnail')) {
                 Storage::delete('public/'.'public/'.$kelas->thumbnail);
@@ -117,6 +129,8 @@ class KelasController extends Controller
         }
     }
 
+    // Tujuan: Menampilkan halaman untuk menambahkan video materi ke dalam kelas.
+    // Fungsi: Menampilkan halaman untuk menambah video materi ke kelas yang sudah ada.
     public function tambahvideo($id)
     {
         $data = [
@@ -127,9 +141,10 @@ class KelasController extends Controller
         return view('admin.kelas.tambahvideo',$data);
     }
 
+    // Tujuan: Menyimpan video materi baru ke dalam kelas.
+    // Fungsi: Memvalidasi dan menyimpan video materi yang ditambahkan ke dalam kelas yang sesuai.
     public function simpanvideo(Request $request,$id)
     {
-
         $validator = Validator($request->all(), [
             'name_video' => 'required',
             'url_video' => 'required',
@@ -148,6 +163,8 @@ class KelasController extends Controller
         }
     }
 
+    // Tujuan: Menghapus video materi dari kelas.
+    // Fungsi: Menghapus video materi berdasarkan ID dan mengarahkannya kembali ke detail kelas.
     public function hapusvideo($id,$idkelas)
     {
         $dec_id = Crypt::decrypt($id);
