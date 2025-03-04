@@ -33,7 +33,7 @@ class LoginController extends Controller
     $user = Auth::user();
     if ($user && $user->role == 'admin') {
         return '/admin';
-    } elseif ($user && $user->role == 'basic') {
+    } elseif ($user && $user->role == 'regular') {
         return '/';
     } elseif ($user && $user->role == 'premium') {
         return '/';
