@@ -3,9 +3,9 @@ user	: admin@gmail.com
 pass	: admin
 
 2. Premium User
-user	: suheri@gmail.com
-pass	: premium
+user	: tohar@gmail.com
+pass	: password
 
 3. Regular User
-user	: tes@gmail.com
-pass	: regular
+user	: musiala@gmail.com
+pass	: password
