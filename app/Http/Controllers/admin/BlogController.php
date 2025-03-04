@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
+    // Tujuan: Menampilkan daftar semua blog.
+    // Fungsi: Mengambil semua data blog dan menampilkannya di halaman admin.
     public function index()
     {
         $data = [
@@ -20,6 +22,8 @@ class BlogController extends Controller
         return view('admin.blog.index', $data);
     }
 
+    // Tujuan: Menampilkan detail blog berdasarkan ID.
+    // Fungsi: Mengambil data blog berdasarkan ID yang didekripsi dan menampilkannya di halaman detail.
     public function detail($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -31,6 +35,8 @@ class BlogController extends Controller
         return view('admin.blog.detail', $data);
     }
 
+    // Tujuan: Menampilkan halaman untuk menambahkan blog baru.
+    // Fungsi: Menampilkan form untuk menambahkan blog baru di halaman admin.
     public function tambah()
     {
         $data = [
@@ -39,6 +45,8 @@ class BlogController extends Controller
         return view('admin.blog.tambah', $data);
     }
 
+    // Tujuan: Menyimpan blog baru ke dalam database.
+    // Fungsi: Memvalidasi data blog yang dimasukkan dan menyimpannya ke dalam database.
     public function simpan(Request $request)
     {
 
@@ -62,6 +70,8 @@ class BlogController extends Controller
         }
     }
 
+    // Tujuan: Menghapus blog berdasarkan ID.
+    // Fungsi: Menghapus blog dari database dan menghapus file thumbnail terkait dari penyimpanan.
     public function hapus($id)
     {
 
@@ -72,6 +82,8 @@ class BlogController extends Controller
         return redirect()->route('admin.blog')->with('status', 'Berhasil Menghapus Blog');
     }
 
+    // Tujuan: Menampilkan halaman untuk mengedit blog berdasarkan ID.
+    // Fungsi: Menampilkan form untuk mengedit data blog berdasarkan ID yang didekripsi.
     public function edit($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -83,6 +95,8 @@ class BlogController extends Controller
         return view('admin.blog.edit', $data);
     }
 
+    // Tujuan: Memperbarui data blog berdasarkan ID.
+    // Fungsi: Memvalidasi dan memperbarui data blog di database berdasarkan ID yang didekripsi.
     public function update(Request $request, $id)
     {
         $dec_id = Crypt::decrypt($id);
