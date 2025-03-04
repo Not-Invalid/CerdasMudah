@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Crypt;
 
 class TransaksiController extends Controller
 {
+    // Tujuan: Menampilkan semua transaksi yang ada di sistem.
+    // Fungsi: Mengambil semua data transaksi dan menampilkannya di halaman admin.
     public function index()
     {
         $data = [
@@ -19,6 +21,8 @@ class TransaksiController extends Controller
         return view('admin.transaksi.index', $data);
     }
 
+    // Tujuan: Menampilkan transaksi yang belum dicek oleh admin (status 0).
+    // Fungsi: Mengambil transaksi dengan status "belum dicek" (status 0) dan menampilkannya di halaman admin.
     public function belumdicek()
     {
         $data = [
@@ -28,6 +32,8 @@ class TransaksiController extends Controller
         return view('admin.transaksi.index', $data);
     }
 
+    // Tujuan: Menampilkan transaksi yang telah disetujui (status 1).
+    // Fungsi: Mengambil transaksi dengan status "disetujui" (status 1) dan menampilkannya di halaman admin.
     public function disetujui()
     {
         $data = [
@@ -37,6 +43,8 @@ class TransaksiController extends Controller
         return view('admin.transaksi.index', $data);
     }
 
+    // Tujuan: Menampilkan transaksi yang ditolak (status 2).
+    // Fungsi: Mengambil transaksi dengan status "ditolak" (status 2) dan menampilkannya di halaman admin.
     public function ditolak()
     {
         $data = [
@@ -46,6 +54,8 @@ class TransaksiController extends Controller
         return view('admin.transaksi.index', $data);
     }
 
+    // Tujuan: Menampilkan detail transaksi berdasarkan ID yang didekripsi.
+    // Fungsi: Mendekripsi ID yang diterima, mencari transaksi berdasarkan ID tersebut, dan menampilkannya di halaman detail.
     public function detail($id)
     {
         $dec_id = Crypt::decrypt($id);
@@ -56,10 +66,13 @@ class TransaksiController extends Controller
         return view('admin.transaksi.detail', $data);
     }
 
-    public function ubah(Request $request,$id)
+    // Tujuan: Mengubah status transaksi (menyetujui atau menolak transaksi) dan memperbarui role pengguna.
+    // Fungsi: Mengupdate status transaksi dan role pengguna (premium jika disetujui, regular jika ditolak), kemudian menyimpan perubahan.
+    public function ubah(Request $request, $id)
     {
         $dec_id = Crypt::decrypt($id);
         $transaksi = Transaksi::find($dec_id);
+
         if($request->status == 1){
             $transaksi->status = 1;
             User::where('id','=',$transaksi->users_id)->update(['role' => 'premium']);
@@ -72,4 +85,3 @@ class TransaksiController extends Controller
         return redirect()->route('admin.transaksi.detail',$id)->with('status','Berhasil Memperbaharui Status');
     }
 }
-
