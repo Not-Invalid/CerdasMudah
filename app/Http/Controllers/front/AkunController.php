@@ -11,26 +11,32 @@ use Illuminate\Support\Facades\Validator;
 
 class AkunController extends Controller
 {
+    // Tujuan: Menampilkan halaman akun pengguna.
+    // Fungsi: Menampilkan halaman profil akun pengguna.
     public function index()
     {
         return view('front.akun.index');
     }
 
+    // Tujuan: Menampilkan halaman untuk mengedit profil pengguna.
+    // Fungsi: Menampilkan form untuk mengedit nama dan email pengguna.
     public function editprofil()
     {
         return view('front.akun.editprofil');
     }
 
+    // Tujuan: Menyimpan perubahan pada profil pengguna.
+    // Fungsi: Memvalidasi dan memperbarui nama dan email pengguna yang sedang login.
     public function simpaneditprofil(Request $request)
     {
         if ($request->email == Auth::user()->email) {
             $validator = Validator::make($request->all(), [
-                'name' => 'required:string',
+                'name' => 'required|string',
                 'email' => 'required'
             ]);
         } else {
             $validator = Validator::make($request->all(), [
-                'name' => 'required:string',
+                'name' => 'required|string',
                 'email' => 'required|unique:users|email'
             ]);
         }
@@ -46,11 +52,15 @@ class AkunController extends Controller
         }
     }
 
+    // Tujuan: Menampilkan halaman untuk mengedit kata sandi pengguna.
+    // Fungsi: Menampilkan form untuk mengubah kata sandi pengguna.
     public function editkatasandi()
     {
         return view('front.akun.editkatasandi');
     }
 
+    // Tujuan: Menyimpan perubahan kata sandi pengguna.
+    // Fungsi: Memvalidasi dan memperbarui kata sandi pengguna yang sedang login.
     public function simpaneditkatasandi(Request $request)
     {
         $validator = Validator::make($request->all(), [
