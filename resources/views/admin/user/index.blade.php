@@ -17,7 +17,7 @@
                                 <th>Nama User</th>
                                 <th>Email</th>
                                 <th>Tipe User</th>
-                                <th width="10%">Aksi</th>
+                                {{-- <th width="10%">Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -27,10 +27,10 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->role }}</td>
-                                <td>
+                                {{-- <td>
                                     <a href="{{ route('admin.kelas.detail',Crypt::encrypt($item->id)) }}"
                                         class="btn btn-warning">Detail</a>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
