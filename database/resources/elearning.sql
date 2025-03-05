@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jul 2020 pada 13.20
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.3.20
+-- Host: localhost:3306
+-- Generation Time: Mar 05, 2025 at 01:18 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,79 +24,70 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `blog`
+-- Table structure for table `blog`
 --
 
 CREATE TABLE `blog` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name_blog` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thumbnail_blog` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content_blog` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name_blog` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail_blog` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content_blog` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `blog`
---
-
-INSERT INTO `blog` (`id`, `name_blog`, `thumbnail_blog`, `content_blog`, `created_at`, `updated_at`) VALUES
-(4, 'Blog', 'thumbnail_blog/SWDPATC2rc6rx7R3lWLzIx6wi7FLglrJlYA1f9zT.png', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu</p>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu</p>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu</p>', '2020-07-19 21:38:59', '2020-07-20 04:52:56');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `id` bigint UNSIGNED NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `kelas`
 --
 
 CREATE TABLE `kelas` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name_kelas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_kelas` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name_kelas` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_kelas` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `description_kelas` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thumbnail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `description_kelas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `kelas`
+-- Dumping data for table `kelas`
 --
 
 INSERT INTO `kelas` (`id`, `name_kelas`, `type_kelas`, `created_at`, `updated_at`, `description_kelas`, `thumbnail`) VALUES
-(5, 'Bahasa Indonesia', 0, NULL, '2020-07-19 04:24:20', '<p>Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;Belajar Materi Bahasa Indonesia&nbsp;</p>', 'thumbnail_kelas/3o5Gl8G6NBz1lcxggJFIDqLx94Jm27T9ffK05TRb.png'),
-(6, 'Matematika Dasar', 1, NULL, NULL, '<p>Belajar Matematika&nbsp;Belajar MatematikaBelajar Matematika&nbsp;Belajar Matematika&nbsp;Belajar Matematika&nbsp;</p>', 'thumbnail_kelas/WTpIr8OJIp4ylFO3RwhP4aEc4QoiSX2YEAgkKwUl.png'),
-(7, 'Belajar Fisika', 2, NULL, NULL, '<p>Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika&nbsp;Belajar Fisika Fisika</p>', 'thumbnail_kelas/M0udeyKA2wrr1DJWZ8fECzmC3dR2yyz8vE7QVajC.png');
+(1, 'Matematika', 0, NULL, '2025-03-04 02:09:00', '<p>Materi Pembelajaran Matematika Kelas 11&nbsp;SMK</p>', 'thumbnail_kelas/fXtXnKp3Sr8Fy2KWz1wv8DVpsl5hfNo2BG8EgPE9.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -117,123 +108,114 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `podcast`
+-- Table structure for table `podcast`
 --
 
 CREATE TABLE `podcast` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name_podcast` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url_podcast` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description_podcast` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name_podcast` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url_podcast` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description_podcast` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `podcast`
+-- Dumping data for table `podcast`
 --
 
 INSERT INTO `podcast` (`id`, `name_podcast`, `url_podcast`, `description_podcast`, `created_at`, `updated_at`) VALUES
-(3, 'Podcast Nya 1', 'tgbNymZ7vqY', '<p>Ini Adalah Podcast</p>', NULL, '2020-07-19 20:57:14'),
-(5, 'Podcast Nya 3', 'tgbNymZ7vqY', '<p>Ini Adalah Podcast</p>', NULL, '2020-07-19 20:57:14'),
-(6, 'dsadasd', 'asdasdas', 'dasda', NULL, NULL);
+(1, 'Fungsi Invers - Matematika SMA Kelas XI Kurikulum Merdeka', 'SXi8tl6LK7I', '<p>Belajar Fungsi Invers || Matematika Kelas 11 Kurikulum Merdeka</p>', NULL, '2025-03-04 02:18:01');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rekening`
+-- Table structure for table `rekening`
 --
 
 CREATE TABLE `rekening` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `no_rekening` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `atas_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `no_rekening` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `atas_nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `rekening`
+-- Dumping data for table `rekening`
 --
 
 INSERT INTO `rekening` (`id`, `no_rekening`, `atas_nama`, `created_at`, `updated_at`) VALUES
-(1, '123456789', 'Chivo', NULL, NULL);
+(1, '123456789', 'Rusdi', NULL, '2025-02-20 08:05:55');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `setting`
+-- Table structure for table `setting`
 --
 
 CREATE TABLE `setting` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `about` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `about` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `harga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `harga` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `setting`
+-- Dumping data for table `setting`
 --
 
 INSERT INTO `setting` (`id`, `about`, `created_at`, `updated_at`, `harga`) VALUES
-(1, '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>', NULL, '2020-07-20 04:26:11', '600000');
+(1, '<p>CerdasMudah adalah sebuah platform pembelajaran online yang dirancang untuk memberikan kemudahan akses kepada para siswa dalam memperoleh materi pelajaran secara efektif, fleksibel, dan menyenangkan. Dengan CerdasMudah, proses belajar tidak lagi terbatas oleh ruang dan waktu. Siswa dapat mengakses berbagai materi pelajaran kapan saja dan di mana saja, sesuai dengan kenyamanan dan kebutuhan mereka.</p>', NULL, '2025-02-20 08:01:03', '600000');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `users_id` bigint(20) UNSIGNED NOT NULL,
-  `bukti_transfer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `users_id` bigint UNSIGNED NOT NULL,
+  `bukti_transfer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `transaksi`
---
-
-INSERT INTO `transaksi` (`id`, `users_id`, `bukti_transfer`, `status`, `created_at`, `updated_at`) VALUES
-(7, 4, 'buktitf/OK4jnTCWU7yNMVJc7a6gl494v58W4zTHLU0BscbS.jpeg', 1, '2020-07-20 01:15:49', '2020-07-20 01:16:31');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -244,160 +226,159 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `video`
+-- Table structure for table `video`
 --
 
 CREATE TABLE `video` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name_video` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url_video` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kelas_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
+  `name_video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url_video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kelas_id` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `video`
+-- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`id`, `name_video`, `url_video`, `kelas_id`, `created_at`, `updated_at`) VALUES
-(4, 'Belajar Pola Kalimat', 'tgbNymZ7vqY', 5, NULL, NULL),
-(5, 'Belajar Kalimat Simpleks', 'tgbNymZ7vqY', 5, NULL, NULL);
+(1, 'Matriks Matematika Wajib Kelas 11 Bagian 1 - Pengenalan Matriks', 'https://youtu.be/HqssIxIg7T4?si=ajd--ABopp6XhK3_', 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `blog`
+-- Indexes for table `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `podcast`
+-- Indexes for table `podcast`
 --
 ALTER TABLE `podcast`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `rekening`
+-- Indexes for table `rekening`
 --
 ALTER TABLE `rekening`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `setting`
+-- Indexes for table `setting`
 --
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indeks untuk tabel `video`
+-- Indexes for table `video`
 --
 ALTER TABLE `video`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `blog`
+-- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
+-- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `podcast`
+-- AUTO_INCREMENT for table `podcast`
 --
 ALTER TABLE `podcast`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `rekening`
+-- AUTO_INCREMENT for table `rekening`
 --
 ALTER TABLE `rekening`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `setting`
+-- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `transaksi`
+-- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `video`
+-- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
